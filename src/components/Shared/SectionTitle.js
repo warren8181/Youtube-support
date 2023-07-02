@@ -38,8 +38,7 @@ class SectionTitle extends Component {
                     : "text-muted para-desc mb-0 mx-auto"
                 }
                 name="sectiondesc"
-              >Start working with {" "}
-                <span className="text-primary fw-bold">Landrick</span> {this.props.desc}</p>
+              >{this.props.desc}</p>
             </div>
           </Col>
         </Row>

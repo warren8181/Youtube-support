@@ -686,7 +686,7 @@ const routes = [
     exact: true,
     component: () => <Redirect to="/index" />,
   },
-  { path: "/index", component: Main, isTopbarDark: true },
+  { path: "/index", component: Event, isTopbarDark: true },
 ];
 
 export default routes;

@@ -1,10 +1,9 @@
 // React Basic and Bootstrap
 import React, { Component } from "react";
 import { Container, Row, Col, Card, CardBody } from "reactstrap";
-import { Link } from "react-router-dom";
 
 //import images
-import about from "../../assets/images/event/about.jpg";
+import about from "../../assets/images/event/selena-dialo.jpg";
 
 class About extends Component {
   constructor(props) {
@@ -25,19 +24,10 @@ class About extends Component {
 
                 <Col lg="6">
                   <CardBody className="section-title p-md-5">
-                    <h4 className="title mb-4">Business Startup Conference</h4>
+                    <h4 className="title mb-4">Auteur : Selena Dialo</h4>
                     <p className="text-muted para-desc mb-0">
-                      Start working with Landrick that can provide everything
-                      you need to generate awareness, drive traffic, connect.
-                      Launch your campaign and benefit from our expertise on
-                      designing and managing conversion centered bootstrap v5 html
-                      page managing conversion centered bootstrap v5 html page.
+                    Titulaire de la chaîne YouTube <span className="fw-bold">Connaître l'Allemagne</span>, Selena Dialo est une étudiante vivant en allemagne depuis 2018, à travers sa chaîne elle conseille, éclaire et surtout donne son retour d'expérience sur son parcours en Allemagne.
                     </p>
-                    <div className="mt-4 pt-2">
-                      <Link to="#" className="btn btn-outline-primary">
-                        Read More <i className="uil uil-angle-right-b"></i>
-                      </Link>
-                    </div>
                   </CardBody>
                 </Col>
               </Row>

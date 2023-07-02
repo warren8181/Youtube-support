@@ -7,7 +7,7 @@ import { Container, Row, Col } from "reactstrap";
 //CountDown
 import Countdown from "react-countdown-now";
 
-import bgImage from '../../assets/images/event/event.jpg';
+import bgImage from '../../assets/images/background/background-interview-illustration.png';
 
 // Random component
 const Completionist = () => <span>You are good to go!</span>;
@@ -49,19 +49,17 @@ class Section extends Component {
           <section className="bg-half-260 w-100 d-table" 
           style={{background : `url(${bgImage}) center center`}}
           >
-            <div className="bg-overlay bg-primary bg-gradient" style={{opacity : '0.85'}}></div>
+            <div className="bg-overlay bg-primary bg-gradient" style={{opacity : '0.4'}}></div>
             <Container>
               <Row className="justify-content-center">
                 <Col lg="10" className="text-center">
                   <div className="title-heading">
                     <h4 className="text-success mb-3">11th October, 2021</h4>
                     <h1 className="display-4 title-dark text-white fw-bold mb-3">
-                      Digital Conference 2021-22
+                      Connaître l'Allemagne
                     </h1>
                     <p className="para-desc title-dark mx-auto text-white-50">
-                      Launch your campaign and benefit from our expertise on
-                      designing and managing conversion centered bootstrap v5 html
-                      page.
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, dolorum illo temporibus repudiandae ad eligendi voluptates officiis tempore corporis sequi ullam consequatur, rerum architecto neque unde quia. Quaerat, perspiciatis corrupti.
                     </p>
 
                     <Row>
@@ -77,7 +75,7 @@ class Section extends Component {
 
                     <div className="mt-3">
                       <Link to="#" className="btn btn-success mt-2 me-2">
-                        <i className="mdi mdi-ticket"></i> Buy Tickets
+                        Rejoins la formation
                       </Link>
                     </div>
                   </div>
@@ -85,7 +83,7 @@ class Section extends Component {
               </Row>
             </Container>
           </section>
-          <div className="position-relative">
+          {/* <div className="position-relative">
             <div className="shape overflow-hidden text-footer">
               <div className="text-center text-white-color p-4">
                 <h5 className="text-dark mb-0">
@@ -93,7 +91,7 @@ class Section extends Component {
                 </h5>
               </div>
             </div>
-          </div>
+          </div> */}
         {/* </Parallax> */}
       </React.Fragment>
     );

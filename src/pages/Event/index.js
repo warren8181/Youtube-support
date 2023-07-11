@@ -1,37 +1,58 @@
-// React Basic and Bootstrap
-import React, { Component } from "react";
-
-// Import Generic components
+import React, { Component, useEffect, useState } from "react";
+import { SiteClient } from 'datocms-client';
 import Section from "./section";
 import About from "./About";
-import Speakers from "./Speakers";
-import Cta from "./Cta";
 import Price from "./Price";
 import Faq from "./Faq";
 import Schedule from "./Schedule";
 
+const client = new SiteClient('4c9e2c2535ba3638c6c8b9d5bf5e77');
 
-class Index extends Component {
-  render() {
+function Index()  {
+
+    const [post, setPost] = useState([]);
+    const [faqs, setFaqs] = useState([]);
+
+    useEffect(() => {
+        client.items.all({ filter: { type: 'post' } })
+            .then((post) => {
+                console.log('post', post);
+                setPost(post);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
+
+    useEffect(() => {
+        client.items.all({ filter: { type: 'faq' } })
+            .then((faqs) => {
+                console.log('faqs', faqs)
+                setFaqs(faqs);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
+
     return (
-      <React.Fragment>
-        {/* Hero Start */}
-        <Section />
+        <React.Fragment>
+            {/* Hero Start */}
+            <Section post={post} />
 
-        {/* About */}
-        <About />
+            {/* About */}
+            <About />
 
-        <Schedule />
+            <Schedule />
 
-        {/* FAQ */}
-        <Faq />
+            {/* FAQ */}
+            <Faq faqs={faqs} />
 
-        {/* Price */}
-        <Price />
+            {/* Price */}
+            <Price />
 
-      </React.Fragment>
+        </React.Fragment>
     );
-  }
 }
 
 export default Index;

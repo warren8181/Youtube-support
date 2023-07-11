@@ -1,23 +1,9 @@
-// React Basic and Bootstrap
 import React, { Component } from "react";
-import { Container, Row, Col, Card, CardBody } from "reactstrap";
+import {Container, Row, Col, Card, CardBody, Label, Input, Button, Form} from "reactstrap";
 import { Link } from "react-router-dom";
 
-//Import Components
-import SectionTitle from "../../components/Shared/SectionTitle";
-
-//Import Images
-import client1 from "../../assets/images/client/01.jpg";
-import client2 from "../../assets/images/client/02.jpg";
-import client3 from "../../assets/images/client/03.jpg";
-import client4 from "../../assets/images/client/04.jpg";
-import client5 from "../../assets/images/client/05.jpg";
-import client6 from "../../assets/images/client/06.jpg";
-
-//import images
-import ticket1 from "../../assets/images/icon/ticket1.svg";
 import ticket2 from "../../assets/images/icon/ticket2.svg";
-import ticket3 from "../../assets/images/icon/ticket3.svg";
+import FeatherIcon from "feather-icons-react";
 
 class Price extends Component {
   constructor(props) {
@@ -31,10 +17,18 @@ class Price extends Component {
           price: "24",
           duration: "Full",
           desc:
-            "Lorem ipsum sit dolor amet consectetur adespicing elit.",
+            "Payer avec PayPal",
         }
-      ]
+      ],
+      showForm: false
     };
+    this.toggleForm = this.toggleForm.bind(this)
+  }
+
+  toggleForm()  {
+    this.setState({
+      showForm: !this.state.showForm
+    });
   }
 
   render() {
@@ -72,14 +66,108 @@ class Price extends Component {
                       </div>
 
                       <p className="text-muted">{pricing.desc}</p>
-                      <Link
-                        to="#"
+                      <button
                         className="btn btn-primary btn-sm mt-4"
+                        onClick={this.toggleForm}
                       >
                         Payer
-                      </Link>
+                      </button>
                     </CardBody>
                   </Card>
+                  {this.state.showForm &&
+                    <Form className="mt-3">
+                    <Row>
+                      <Col md={12}>
+                        <div className="mb-3">
+                          <Label className="form-label">
+                            Nom
+                            <span className="text-danger">*</span>
+                          </Label>
+                          <div className="form-icon position-relative">
+                            <FeatherIcon
+                                icon="user"
+                                className="fea icon-sm icons"
+                            />
+                            <Input
+                                name="name"
+                                id="name" type="text"
+                                className="form-control ps-5"
+                                placeholder="Entrez votre nom"
+                            />
+                          </div>
+                        </div>
+                      </Col>
+                      <Col md={12}>
+                        <div className="mb-3">
+                          <Label className="form-label">
+                            Email
+                            <span className="text-danger">*</span>
+                          </Label>
+                          <div className="form-icon position-relative">
+                            <FeatherIcon
+                                icon="mail"
+                                className="fea icon-sm icons"
+                            />
+                            <Input
+                                name="email"
+                                id="email"
+                                type="email"
+                                className="form-control ps-5"
+                                placeholder="Entrez votre Email"
+                            />
+                          </div>
+                        </div>
+                      </Col>
+                      <Col md={12}>
+                        <div className="mb-3">
+                          <Label className="form-label">
+                            Pays
+                            <span className="text-danger">*</span>
+                          </Label>
+                          <div className="form-icon position-relative">
+                            <FeatherIcon
+                                icon="country"
+                                className="fea icon-sm icons"
+                            />
+                            <Input
+                                name="country"
+                                id="country"
+                                type="text"
+                                className="form-control ps-5"
+                                placeholder="Entrez votre Pays"
+                            />
+                          </div>
+                        </div>
+                      </Col>
+                      <Col md={12}>
+                        <div className="mb-3">
+                          <Label className="form-label">
+                            Téléphone
+                            <span className="text-danger">*</span>
+                          </Label>
+                          <div className="form-icon position-relative">
+                            <FeatherIcon
+                                icon="phone"
+                                className="fea icon-sm icons"
+                            />
+                            <Input
+                                name="phone"
+                                id="phone"
+                                type="number"
+                                className="form-control ps-5"
+                                placeholder="Entrez votre numéro"
+                            />
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col sm={12}>
+                        <Button type="submit" id="submit" name="send" className="btn" color="primary">Continuer</Button>
+                      </Col>
+                    </Row>
+                  </Form>
+                  }
                 </Col>
               ))}
             </Row>
